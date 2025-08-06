@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
 </head>
 <body>
     <header>
@@ -190,7 +192,7 @@
 
     <section class="certificate" id="certificate" style="display: none;">
         <div class="container">
-            <div class="certificate-card">
+            <div class="certificate-card" id="certificate-to-download">
                 <div class="certificate-header">
                     <h2>Certificate of Climate Commitment</h2>
                     <p>Presented to</p>
@@ -203,9 +205,16 @@
                 </div>
                 <div class="certificate-footer">
                     <p>Thank you for joining the global climate action movement.</p>
-                    <button id="share-btn" class="btn-outline"><i class="fas fa-share-alt"></i> Share</button>
-                    <button id="download-btn" class="btn-outline"><i class="fas fa-download"></i> Download</button>
+                    <div class="certificate-id">Pledge ID: <span id="certificate-id"></span></div>
                 </div>
+                <div class="watermark">
+                    <img src="https://cdn.pixabay.com/photo/2017/02/12/21/29/earth-2060988_640.png" alt="Earth">
+                </div>
+            </div>
+            <div class="certificate-actions">
+                <button id="share-btn" class="btn-outline"><i class="fas fa-share-alt"></i> Share</button>
+                <button id="download-btn" class="btn"><i class="fas fa-download"></i> Download Certificate</button>
+                <button id="new-pledge-btn" class="btn-outline"><i class="fas fa-plus"></i> New Pledge</button>
             </div>
         </div>
     </section>

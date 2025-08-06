@@ -195,54 +195,105 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Show certificate
+
+    // Previous JavaScript code remains the same
+    // Add these new functions for certificate handling
+
     function showCertificate(pledge) {
+        // Set certificate content
         document.getElementById('certificate-name').textContent = pledge.name;
         document.getElementById('certificate-date').textContent = pledge.date;
+        document.getElementById('certificate-id').textContent = pledge.id;
         
+        // Set star rating
         const rating = document.getElementById('certificate-rating');
         rating.innerHTML = '';
         const starCount = Math.min(pledge.commitments.length, 5);
         rating.innerHTML = '⭐'.repeat(starCount);
         
-        // Scroll to certificate
+        // Show certificate section
         document.getElementById('certificate').style.display = 'block';
+        
+        // Scroll to certificate
         window.scrollTo({
             top: document.getElementById('certificate').offsetTop - 70,
             behavior: 'smooth'
         });
         
-        // Share button
-        document.getElementById('share-btn').addEventListener('click', function() {
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Climate Action Pledge',
-                    text: `I just took the climate action pledge! Join me in making a difference.`,
-                    url: window.location.href.split('#')[0] + '#certificate'
-                }).catch(err => {
-                    console.log('Error sharing:', err);
-                });
-            } else {
-                // Fallback for browsers that don't support Web Share API
-                const shareUrl = window.location.href.split('#')[0] + '#certificate';
-                const shareText = `I just took the climate action pledge! Check out my certificate: ${shareUrl}`;
-                
-                // Copy to clipboard
-                navigator.clipboard.writeText(shareText).then(() => {
-                    alert('Share link copied to clipboard!');
-                }).catch(err => {
-                    console.log('Could not copy text: ', err);
-                    prompt('Copy this link to share:', shareUrl);
-                });
-            }
-        });
+        // Set up download button
+        document.getElementById('download-btn').onclick = function() {
+            downloadCertificate();
+        };
         
-        // Download button (simplified - would need more complex solution for actual image download)
-        document.getElementById('download-btn').addEventListener('click', function() {
-            alert('In a full implementation, this would download your certificate as an image.');
+        // Set up share button
+        document.getElementById('share-btn').onclick = function() {
+            shareCertificate(pledge);
+        };
+        
+        // Set up new pledge button
+        document.getElementById('new-pledge-btn').onclick = function() {
+            document.getElementById('certificate').style.display = 'none';
+            document.getElementById('pledge').scrollIntoView({ behavior: 'smooth' });
+        };
+    }
+
+    function downloadCertificate() {
+        const certificateElement = document.getElementById('certificate-to-download');
+        
+        // Use html2canvas to create an image of the certificate
+        html2canvas(certificateElement, {
+            scale: 2, // Higher quality
+            logging: false,
+            useCORS: true,
+            allowTaint: true
+        }).then(canvas => {
+            // Create download link
+            const link = document.createElement('a');
+            link.download = 'climate-pledge-certificate.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
         });
     }
-    
+
+    function shareCertificate(pledge) {
+        if (navigator.share) {
+            // Web Share API is available
+            navigator.share({
+                title: 'My Climate Action Pledge',
+                text: `I pledged to take climate action! ${pledge.name} is cool enough to care about our planet.`,
+                url: window.location.href
+            }).catch(err => {
+                console.log('Error sharing:', err);
+                fallbackShare(pledge);
+            });
+        } else {
+            // Fallback for browsers without Web Share API
+            fallbackShare(pledge);
+        }
+    }
+
+    function fallbackShare(pledge) {
+        const shareText = `I pledged to take climate action! ${pledge.name} is cool enough to care about our planet.`;
+        const shareUrl = window.location.href;
+        
+        // Try to copy to clipboard
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText(`${shareText} ${shareUrl}`).then(() => {
+                alert('Copied to clipboard! Paste it anywhere to share.');
+            }).catch(err => {
+                console.error('Could not copy text: ', err);
+                prompt('Copy this message to share:', `${shareText} ${shareUrl}`);
+            });
+        } else {
+            // Final fallback
+            prompt('Copy this message to share:', `${shareText} ${shareUrl}`);
+        }
+    }
+
     // Initialize the app
     updateKPIs();
     renderPledgeWall();
+
 });
+
+
