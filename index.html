@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Action Pledge</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <a href="#" class="logo">ClimatePledge</a>
+                <ul class="nav-links">
+                    <li><a href="#pledge">Take Pledge</a></li>
+                    <li><a href="#impact">Impact</a></li>
+                    <li><a href="#wall">Pledge Wall</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Join the Global Climate Action</h1>
+                <p>Your small changes make a big difference. Take the pledge today!</p>
+                <a href="#pledge" class="btn">Take the Pledge</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Climate action">
+            </div>
+        </div>
+    </section>
+
+    <section class="kpis">
+        <div class="container">
+            <h2>Our Collective Impact</h2>
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-value" id="target-pledges">1,000,000</div>
+                    <div class="kpi-label">Target Pledges</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value" id="achieved-pledges">0</div>
+                    <div class="kpi-label">Achieved Pledges</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value" id="student-pledges">0</div>
+                    <div class="kpi-label">Students</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value" id="professional-pledges">0</div>
+                    <div class="kpi-label">Professionals</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="impact" id="impact">
+        <div class="container">
+            <h2>Why Your Pledge Matters</h2>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Global Movement</h3>
+                    <p>Join millions worldwide taking action against climate change.</p>
+                </div>
+                <div class="impact-card">
+                    <i class="fas fa-seedling"></i>
+                    <h3>Real Impact</h3>
+                    <p>Small changes add up to significant reductions in carbon emissions.</p>
+                </div>
+                <div class="impact-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Inspire Others</h3>
+                    <p>Your commitment encourages friends and family to take action.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pledge-form" id="pledge">
+        <div class="container">
+            <h2>Take the Climate Action Pledge</h2>
+            <form id="climatePledgeForm">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Mobile Number *</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <small class="privacy-note">Your number will not be displayed publicly</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="state">State/Region</label>
+                    <select id="state" name="state">
+                        <option value="">Select your state</option>
+                        <option value="California">California</option>
+                        <option value="New York">New York</option>
+                        <option value="Texas">Texas</option>
+                        <!-- More states can be added -->
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label>Profile Type *</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="profile" value="Student" required> Student
+                        </label>
+                        <label>
+                            <input type="radio" name="profile" value="Working Professional"> Working Professional
+                        </label>
+                        <label>
+                            <input type="radio" name="profile" value="Other"> Other
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Your Climate Commitments (Select at least one) *</label>
+                    
+                    <fieldset>
+                        <legend>Energy Conservation</legend>
+                        <label>
+                            <input type="checkbox" name="commitments" value="Turn off lights when not in use"> Turn off lights when not in use
+                        </label>
+                        <label>
+                            <input type="checkbox" name="commitments" value="Use energy-efficient appliances"> Use energy-efficient appliances
+                        </label>
+                        <label>
+                            <input type="checkbox" name="commitments" value="Set thermostat 1°C higher in summer"> Set thermostat 1°C higher in summer
+                        </label>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Sustainable Travel</legend>
+                        <label>
+                            <input type="checkbox" name="commitments" value="Walk or bike for short trips"> Walk or bike for short trips
+                        </label>
+                        <label>
+                            <input type="checkbox" name="commitments" value="Use public transportation weekly"> Use public transportation weekly
+                        </label>
+                        <label>
+                            <input type="checkbox" name="commitments" value="Consider electric for next vehicle"> Consider electric for next vehicle
+                        </label>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Waste Reduction</legend>
+                        <label>
+                            <input type="checkbox" name="commitments" value="Reduce single-use plastics"> Reduce single-use plastics
+                        </label>
+                        <label>
+                            <input type="checkbox" name="commitments" value="Recycle properly"> Recycle properly
+                        </label>
+                        <label>
+                            <input type="checkbox" name="commitments" value="Compost food waste"> Compost food waste
+                        </label>
+                    </fieldset>
+                </div>
+                
+                <div class="privacy-notice">
+                    <p><strong>Privacy Note:</strong> Your email and mobile number are required for validation but will never be shown publicly. Data will only be used for verification and engagement purposes.</p>
+                </div>
+                
+                <button type="submit" class="btn">Submit Pledge</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="certificate" id="certificate" style="display: none;">
+        <div class="container">
+            <div class="certificate-card">
+                <div class="certificate-header">
+                    <h2>Certificate of Climate Commitment</h2>
+                    <p>Presented to</p>
+                    <h3 id="certificate-name">[Name]</h3>
+                </div>
+                <div class="certificate-body">
+                    <p class="statement">Cool Enough to Care!</p>
+                    <div class="rating" id="certificate-rating"></div>
+                    <p class="date">Date: <span id="certificate-date"></span></p>
+                </div>
+                <div class="certificate-footer">
+                    <p>Thank you for joining the global climate action movement.</p>
+                    <button id="share-btn" class="btn-outline"><i class="fas fa-share-alt"></i> Share</button>
+                    <button id="download-btn" class="btn-outline"><i class="fas fa-download"></i> Download</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pledge-wall" id="wall">
+        <div class="container">
+            <h2>Climate Action Pledge Wall</h2>
+            <p>See others who have taken the pledge</p>
+            
+            <div class="filter-controls">
+                <div class="form-group">
+                    <label for="filter-profile">Filter by Profile:</label>
+                    <select id="filter-profile">
+                        <option value="all">All Profiles</option>
+                        <option value="Student">Students</option>
+                        <option value="Working Professional">Professionals</option>
+                        <option value="Other">Others</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="filter-state">Filter by State:</label>
+                    <select id="filter-state">
+                        <option value="all">All States</option>
+                        <option value="California">California</option>
+                        <option value="New York">New York</option>
+                        <option value="Texas">Texas</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="table-responsive">
+                <table id="pledgeTable">
+                    <thead>
+                        <tr>
+                            <th>Pledge ID</th>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>State</th>
+                            <th>Profile</th>
+                            <th>Love for Planet</th>
+                        </tr>
+                    </thead>
+                    <tbody id="pledgeTableBody">
+                        <!-- Pledges will be inserted here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="pagination" id="pagination">
+                <!-- Pagination will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Climate Action Pledge</h3>
+                    <p>Join the movement to combat climate change through individual actions that add up to global impact.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#pledge">Take Pledge</a></li>
+                        <li><a href="#impact">Why It Matters</a></li>
+                        <li><a href="#wall">Pledge Wall</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact</h3>
+                    <p>questions@climatepledge.org</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Climate Action Pledge. All rights reserved.</p>
+                <div class="privacy-policy">
+                    <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
