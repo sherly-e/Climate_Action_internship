@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: 'Alex Johnson',
                 email: 'alex@example.com',
                 phone: '5550101',
-                state: 'California',
+                state: 'Assam',
                 profile: 'Student',
                 commitments: ['Turn off lights when not in use', 'Walk or bike for short trips', 'Reduce single-use plastics'],
                 date: '2023-06-10'
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: 'Maria Garcia',
                 email: 'maria@example.com',
                 phone: '5550102',
-                state: 'New York',
+                state: 'Karnataka',
                 profile: 'Working Professional',
                 commitments: ['Use energy-efficient appliances', 'Use public transportation weekly', 'Recycle properly'],
                 date: '2023-06-11'
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: 'James Smith',
                 email: 'james@example.com',
                 phone: '5550103',
-                state: 'Texas',
+                state: 'Manipur',
                 profile: 'Other',
                 commitments: ['Set thermostat 1°C higher in summer', 'Consider electric for next vehicle', 'Compost food waste'],
                 date: '2023-06-12'
