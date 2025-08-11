@@ -1,4 +1,31 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Populate state dropdowns
+const states = [
+    "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",
+    "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka",
+    "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram",
+    "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana",
+    "Tripura", "Uttar Pradesh", "Uttarakhand", "West Bengal",
+    "Andaman and Nicobar Islands", "Chandigarh",
+    "Dadra and Nagar Haveli and Daman and Diu", "Delhi", "Jammu and Kashmir",
+    "Ladakh", "Lakshadweep", "Puducherry"
+];
+
+const pledgeStateSelect = document.getElementById("state");
+const filterStateSelect = document.getElementById("filter-state");
+
+states.forEach(state => {
+    const option1 = document.createElement("option");
+    option1.value = state;
+    option1.textContent = state;
+    pledgeStateSelect.appendChild(option1);
+
+    const option2 = document.createElement("option");
+    option2.value = state;
+    option2.textContent = state;
+    filterStateSelect.appendChild(option2);
+});
+
     // Mobile Navigation
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
